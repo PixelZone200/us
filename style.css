@@ -3,7 +3,8 @@ body {
   text-align: center;
   background-color: #f4f4f4;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -13,9 +14,9 @@ body {
 #cardContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  max-width: 600px;
-  margin: 20px auto;
+  gap: 6px;
+  max-width: 95vw;
+  margin: 10px auto;
 }
 
 .card {
@@ -43,7 +44,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 6px;
   backface-visibility: hidden;
   background-size: cover;
   background-position: center;
@@ -58,10 +59,19 @@ body {
   transform: rotateY(0deg);
 }
 
-/* Telefonra optimalizálva */
+/* Mobil optimalizálás – kisebb hézag, kisebb kártyák */
 @media (max-width: 600px) {
   #cardContainer {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 90%;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    max-width: 100vw;
+  }
+
+  .card {
+    aspect-ratio: 1 / 1;
+  }
+
+  body {
+    padding: 4px;
   }
 }
