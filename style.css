@@ -20,10 +20,10 @@ body {
 
 #cardContainer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 oszlop */
+  grid-template-columns: repeat(6, 1fr); /* 📌 6 oszlop fixen */
   gap: 10px;
   justify-content: center;
-  max-width: 720px;
+  max-width: 1000px;
   margin: 20px auto;
 }
 
@@ -57,4 +57,25 @@ body {
 .card-front {
   transform: rotateY(180deg);
   background-size: cover;
-  background-position: cente
+  background-position: center;
+}
+
+.card-back {
+  background-image: url('images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #ccc;
+}
+
+/* 🔁 Reszponzív telefonra/tabletre */
+@media (max-width: 1024px) {
+  #cardContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
