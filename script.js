@@ -127,8 +127,12 @@ function checkMatch() {
   const [first, second] = flippedCards;
 
   if (cards[first.index] === cards[second.index]) {
-    flippedCards = [];
-    checkWin();
+    setTimeout(() => {
+      first.element.style.visibility = 'hidden';
+      second.element.style.visibility = 'hidden';
+      flippedCards = [];
+      checkWin();
+    }, 500);
   } else {
     setTimeout(() => {
       first.element.classList.remove('flipped');
@@ -140,9 +144,9 @@ function checkMatch() {
 
 function checkWin() {
   const total = document.querySelectorAll('.card').length;
-  const flipped = document.querySelectorAll('.card.flipped').length;
+  const hidden = document.querySelectorAll('.card[style*="hidden"]').length;
 
-  if (flipped === total) {
+  if (hidden === total) {
     stopTimer();
     gameOver.classList.remove('hidden');
     finalTimeDisplay.textContent = `${minutes} perc, ${seconds} másodperc`;
