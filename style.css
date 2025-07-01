@@ -13,9 +13,9 @@ body {
 
 #cardContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr); /* 7 kártya egy sorban */
   gap: 6px;
-  max-width: 95vw;
+  max-width: 98vw;
   margin: 10px auto;
 }
 
@@ -59,10 +59,10 @@ body {
   transform: rotateY(0deg);
 }
 
-/* Mobil optimalizálás – kisebb hézag, kisebb kártyák */
+/* Mobil optimalizálás */
 @media (max-width: 600px) {
   #cardContainer {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* Továbbra is 7 kártya mobilon */
     gap: 4px;
     max-width: 100vw;
   }
