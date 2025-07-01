@@ -20,10 +20,10 @@ body {
 
 #cardContainer {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 oszlop */
+  grid-template-columns: repeat(6, 1fr); /* 6 oszlop */
   gap: 10px;
   justify-content: center;
-  max-width: 700px;
+  max-width: 720px;
   margin: 20px auto;
 }
 
@@ -57,28 +57,4 @@ body {
 .card-front {
   transform: rotateY(180deg);
   background-size: cover;
-  background-position: center;
-}
-
-.card-back {
-  background-image: url('images/back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-color: #ccc;
-}
-
-/* Mobilbarát elrendezés */
-@media (max-width: 768px) {
-  #cardContainer {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 95vw;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  #cardContainer {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-}
+  background-position: cente
