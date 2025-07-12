@@ -7,6 +7,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden; /* Elkerüljük a görgetést */
 }
 
 .hidden {
@@ -22,17 +23,19 @@ button {
 
 #cardContainer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 👉 6 oszlop */
-  gap: 10px;
+  grid-template-columns: repeat(6, 1fr); /* 6 oszlopos elrendezés asztali nézetben */
+  gap: 5px; /* Kártyák közötti távolság csökkentése */
   justify-content: center;
   padding: 20px;
   max-width: 100%;
   box-sizing: border-box;
+  height: calc(100vh - 150px); /* Beállítjuk a kártyák magasságát, hogy elférjenek */
+  overflow-y: hidden; /* Töröljük a függőleges görgetést */
 }
 
 .card {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* A kártyák négyzetesek maradnak */
   perspective: 1000px;
 }
 
@@ -71,12 +74,14 @@ button {
 /* Responsive — kisebb képernyőkön */
 @media (max-width: 768px) {
   #cardContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 oszlopos elrendezés közepes képernyőkön */
+    height: calc(100vh - 150px); /* Kisebb képernyőkön is elférjen a kártya */
   }
 }
 
 @media (max-width: 480px) {
   #cardContainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 oszlopos elrendezés kisebb képernyőkön */
+    height: calc(100vh - 150px); /* Még kisebb képernyőkön is kényelmes elrendezés */
   }
 }
